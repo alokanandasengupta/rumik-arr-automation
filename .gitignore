@@ -1,0 +1,25 @@
+# secrets
+.env
+.env.*
+*.env
+
+# data caches / PII / business data — never commit
+ARR automation/.daily_funnel_cache/
+ARR automation/.august_cache/
+ARR automation/csv_export/
+ARR automation/*.log
+ARR automation/*.xlsx
+ARR automation/arr_sync_state.json
+ARR automation/.sync_arr.lock
+*.csv
+
+# build artifacts / dependencies (the Next.js app is its own separate repo, excluded entirely)
+ira_arr_redesigned/
+node_modules/
+.next/
+__pycache__/
+*.pyc
+
+# OS / editor / session
+.DS_Store
+.claude/
