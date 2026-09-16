@@ -37,6 +37,11 @@ Meta ad campaign/ad-set that drove the original signup.
   engineer (or LLM) with DB access could pick this up cold.
 - **`ARR automation/DAILY_FUNNEL_REPORT_LOGIC.md`** — the underlying
   business logic reference the job implements.
+- **`ARR automation/com.rumik.dailyfunnel.plist`** — the actual launchd
+  config: drop into `~/Library/LaunchAgents/` and
+  `launchctl bootstrap gui/$(id -u) <path>` to run the job every 30
+  minutes, all day — it no-ops if already done for the day or if the DB
+  isn't reachable yet, so it doesn't need a fixed wake time.
 - **`ARR automation/*.py`** (export/reconcile scripts) — supporting
   one-off scripts used to validate the job's numbers against a
   hand-maintained reference sheet during development.
